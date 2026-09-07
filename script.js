@@ -49,23 +49,19 @@ document.addEventListener("DOMContentLoaded", function () {
       header.classList.remove("scrolled");
     }
   }
-
   window.addEventListener("scroll", updateHeader);
   updateHeader();
 
   // 3. Category Filter for Destination Cards
   const categoryButtons = document.querySelectorAll(".category-btn");
   const destinationCards = document.querySelectorAll(".destination-card");
-
   categoryButtons.forEach(function (button) {
     button.addEventListener("click", function () {
-      // 1. Update active button styling
       categoryButtons.forEach(function (btn) {
         btn.classList.remove("active");
       });
       button.classList.add("active");
 
-      // 2. Get selected category name
       const selectedCategory = button.getAttribute("data-category");
 
       // 3. Show or hide destination cards
@@ -74,7 +70,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (selectedCategory === "all" || cardCategories.includes(selectedCategory)) {
           card.classList.remove("hidden");
-          // Re-trigger subtle reveal animation
           card.classList.add("active");
         } else {
           card.classList.add("hidden");
@@ -106,34 +101,5 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   window.addEventListener("scroll", highlightCurrentSection);
-
-  // 5. Scroll Reveal Animation using IntersectionObserver
-  const revealElements = document.querySelectorAll(".reveal");
-
-  if ("IntersectionObserver" in window) {
-    const revealObserver = new IntersectionObserver(
-      function (entries, observer) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("active");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        threshold: 0.12,
-        rootMargin: "0px 0px -40px 0px"
-      }
-    );
-
-    revealElements.forEach(function (el) {
-      revealObserver.observe(el);
-    });
-  } else {
-    // Fallback for older browsers
-    revealElements.forEach(function (el) {
-      el.classList.add("active");
-    });
-  }
 
  });

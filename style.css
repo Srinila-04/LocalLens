@@ -1,5 +1,3 @@
-@import url('https://fonts Yeah, but....googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
-
 :root {
   --primary-color: #163A2D;
   --primary-light: #285542;
@@ -62,43 +60,31 @@ section {
 
 /* ==================== HEADER ==================== */
 
-/* ==================== HEADER ==================== */
-
 .header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
-
     padding: 18px 6%;
-
     background: transparent;
-
     transition:
         background-color 0.3s ease,
         box-shadow 0.3s ease;
 }
-
-/* ==================== SCROLLED HEADER ==================== */
 
 .header.scrolled {
     background: #ffffff;
     box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
 }
 
-/* ==================== NAVBAR ==================== */
-
 .navbar {
     max-width: 1200px;
     margin: auto;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-
-/* ==================== LOGO ==================== */
 
 .logo {
     display: inline-flex;
@@ -108,7 +94,6 @@ section {
     font-family: 'Playfair Display', serif;
     font-size: 27px;
     font-weight: 700;
-
     transition: color 0.3s ease;
 }
 
@@ -131,8 +116,6 @@ svg.logo-leaf {
     color: var(--primary-color);
 }
 
-/* ==================== NAV LINKS ==================== */
-
 .nav-links {
     display: flex;
     align-items: center;
@@ -141,9 +124,7 @@ svg.logo-leaf {
 
 .nav-link {
     position: relative;
-
     color: var(--white);
-
     transition: color 0.3s ease;
 }
 
@@ -152,7 +133,6 @@ svg.logo-leaf {
     color: var(--charcoal);
 }
 
-/* Hover + active */
 .nav-link:hover,
 .nav-link.active {
     color: var(--accent-color);
@@ -161,16 +141,12 @@ svg.logo-leaf {
 /* Underline */
 .nav-link::after {
     content: '';
-
     position: absolute;
     left: 0;
     bottom: -5px;
-
     width: 0;
     height: 2px;
-
     background: var(--accent-color);
-
     transition: width 0.3s ease;
 }
 
@@ -179,25 +155,18 @@ svg.logo-leaf {
     width: 100%;
 }
 
-/* ==================== NAV ACTIONS ==================== */
-
 .nav-actions {
     display: flex;
     align-items: center;
     gap: 15px;
 }
 
-/* Explore Now */
 .nav-cta {
     padding: 10px 19px;
-
     border-radius: var(--radius-small);
-
     background: var(--accent-color);
     color: var(--white);
-
     font-size: 12px;
-
     transition: all 0.3s ease;
 }
 
@@ -209,19 +178,17 @@ svg.logo-leaf {
 
 .menu-button {
     display: none;
-
     border: none;
     background: transparent;
-
     color: var(--white);
     font-size: 24px;
-
     cursor: pointer;
 }
 
 .header.scrolled .menu-button {
     color: var(--primary-color);
 }
+
 /* ==================== HERO ==================== */
 
 .hero {
@@ -305,15 +272,13 @@ svg.logo-leaf {
   color: var(--primary-color);
 }
 
-/* ==================== HERO STATS ==================== */
-
-.hero-stats {
+/* .hero-stats {
   position: absolute;
   right: 6%;
   bottom: 50px;
   display: flex;
   gap: 10px;
-}
+} */
 
 .stat-card {
   min-width: 125px;
@@ -337,8 +302,6 @@ svg.logo-leaf {
   font-size: 9px;
   line-height: 1.4;
 }
-
-/* ==================== SECTION HEADER ==================== */
 
 .section-header {
   max-width: 650px;
@@ -416,28 +379,20 @@ svg.logo-leaf {
   color: var(--white);
 }
 
-/* ==================== DESTINATION GRID ==================== */
-
 .destination-grid {
     max-width: 1100px;
     margin: auto;
-
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 18px;
 }
 
-/* ==================== DESTINATION CARD ==================== */
-
 .destination-card {
     overflow: hidden;
-
     border: 1px solid var(--border-color);
     border-radius: var(--radius-medium);
-
     background: var(--white);
     box-shadow: var(--shadow);
-
     transition:
         box-shadow 0.3s ease,
         border-color 0.3s ease;
@@ -452,15 +407,11 @@ svg.logo-leaf {
     display: none;
 }
 
-/* ==================== CARD IMAGE ==================== */
-
 .card-image-wrap {
     width: 100%;
     height: 150px;
-
     margin: 0;
     overflow: hidden;
-
     position: relative;
 }
 
@@ -473,8 +424,6 @@ svg.logo-leaf {
     display: block;
 }
 
-/* ==================== CARD CONTENT ==================== */
-
 .card-content {
     padding: 13px;
 }
@@ -484,9 +433,7 @@ svg.logo-leaf {
     align-items: center;
     gap: 4px;
     margin-bottom: 4px;
-
     color: var(--accent-color);
-
     font-size: 9px;
     font-weight: 600;
     letter-spacing: 1px;
@@ -502,9 +449,7 @@ svg.logo-leaf {
 
 .card-title {
     margin-bottom: 5px;
-
     color: var(--primary-color);
-
     font-family: 'Playfair Display', serif;
     font-size: 18px;
     line-height: 1.2;
@@ -512,9 +457,7 @@ svg.logo-leaf {
 
 .card-description {
     margin-bottom: 10px;
-
     color: var(--text-muted);
-
     font-size: 10px;
     line-height: 1.5;
 }
