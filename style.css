@@ -915,13 +915,10 @@ svg.logo-leaf {
 
 /* ==================== EXPERIENCES ==================== */
 
-/* ==================== EXPERIENCES ==================== */
 
 .experiences {
     background: var(--background-color);
 }
-
-/* ==================== EXPERIENCE GRID ==================== */
 
 .experience-grid {
     max-width: 1200px;
@@ -931,8 +928,6 @@ svg.logo-leaf {
     grid-template-columns: repeat(4, 1fr);
     gap: 18px;
 }
-
-/* ==================== EXPERIENCE CARD ==================== */
 
 .experience-card {
     position: relative;
@@ -962,11 +957,8 @@ svg.logo-leaf {
 .experience-card img {
     width: 100%;
     height: 100%;
-
     display: block;
-
     object-fit: cover;
-
     transition: transform 0.5s ease;
 }
 
@@ -997,20 +989,15 @@ svg.logo-leaf {
     right: 0;
     bottom: 0;
     left: 0;
-
     padding: 25px 27px 28px;
-
     color: var(--white);
 }
 
 /* Small category */
 .experience-tag {
     display: block;
-
     margin-bottom: 14px;
-
     color: rgba(255, 255, 255, 0.9);
-
     font-size: 11px;
     font-weight: 700;
 
@@ -1138,30 +1125,6 @@ svg.logo-leaf {
   color: var(--text-muted);
   font-size: 11px;
   line-height: 1.7;
-}
-
-/* ==================== CTA ==================== */
-
-.cta {
-  padding: 80px 6%;
-  background: var(--primary-color);
-  color: var(--white);
-  text-align: center;
-}
-
-.cta h2 {
-  margin-bottom: 12px;
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(31px, 5vw, 48px);
-  line-height: 1.2;
-}
-
-.cta p {
-  max-width: 570px;
-  margin: 0 auto 24px;
-  color: rgba(255, 255, 255, 0.75);
-  font-size: 12px;
-  line-height: 1.8;
 }
 
 /* ==================== FOOTER ==================== */
