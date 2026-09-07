@@ -1,13 +1,12 @@
-// ==========================================================================
-// LocalLens — Interactive Vanilla JavaScript
-// ==========================================================================
-
 // Wait for the DOM content to fully load before executing scripts
 document.addEventListener("DOMContentLoaded", function () {
 
-  // --------------------------------------------------------------------------
+  // Initialize Lucide Icons
+  if (typeof lucide !== "undefined") {
+    lucide.createIcons();
+  }
+
   // 1. Mobile Menu Toggle
-  // --------------------------------------------------------------------------
   const menuButton = document.getElementById("menuButton");
   const navLinks = document.getElementById("navLinks");
   const navLinkItems = document.querySelectorAll(".nav-link");
@@ -40,22 +39,21 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // --------------------------------------------------------------------------
   // 2. Sticky Header on Scroll
-  // --------------------------------------------------------------------------
   const header = document.getElementById("header");
 
-  window.addEventListener("scroll", function () {
+  function updateHeader() {
     if (window.scrollY > 40) {
       header.classList.add("scrolled");
     } else {
       header.classList.remove("scrolled");
     }
-  });
+  }
 
-  // --------------------------------------------------------------------------
+  window.addEventListener("scroll", updateHeader);
+  updateHeader();
+
   // 3. Category Filter for Destination Cards
-  // --------------------------------------------------------------------------
   const categoryButtons = document.querySelectorAll(".category-btn");
   const destinationCards = document.querySelectorAll(".destination-card");
 
@@ -85,9 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // --------------------------------------------------------------------------
   // 4. Highlight Active Navigation Link on Scroll
-  // --------------------------------------------------------------------------
   const sections = document.querySelectorAll("section[id]");
 
   function highlightCurrentSection() {
@@ -111,9 +107,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   window.addEventListener("scroll", highlightCurrentSection);
 
-  // --------------------------------------------------------------------------
   // 5. Scroll Reveal Animation using IntersectionObserver
-  // --------------------------------------------------------------------------
   const revealElements = document.querySelectorAll(".reveal");
 
   if ("IntersectionObserver" in window) {
@@ -142,36 +136,4 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // --------------------------------------------------------------------------
-  // 6. Subtle 3D Card Tilt Effect (Cursor Following)
-  // --------------------------------------------------------------------------
-  // Only enable on devices that support true mouse hover
-  const isHoverDevice = window.matchMedia("(hover: hover)").matches;
-
-  if (isHoverDevice) {
-    const tiltCards = document.querySelectorAll(".destination-card, .experience-card");
-
-    tiltCards.forEach(function (card) {
-      card.addEventListener("mousemove", function (event) {
-        const rect = card.getBoundingClientRect();
-        const x = event.clientX - rect.left;
-        const y = event.clientY - rect.top;
-
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-
-        // Gentle tilt angle (max 6 degrees)
-        const rotateX = ((y - centerY) / centerY) * -6;
-        const rotateY = ((x - centerX) / centerX) * 6;
-
-        card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-8px)`;
-      });
-
-      card.addEventListener("mouseleave", function () {
-        // Reset card angle smoothly
-        card.style.transform = "";
-      });
-    });
-  }
-
-});
+ });
